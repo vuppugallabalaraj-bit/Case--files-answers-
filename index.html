@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CASE FILES | Classified Archive</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#171714;color:#e8dfca;font-family:Georgia,serif}
+header{text-align:center;padding:45px 15px;background:#24231e;border-bottom:3px solid #a33}
+.stamp{color:#d44;border:2px solid #d44;display:inline-block;padding:7px 15px;transform:rotate(-5deg);letter-spacing:4px;font-weight:bold}
+h1{font-size:38px;letter-spacing:7px;margin:25px 0 8px}
+header p{color:#b8ae99;letter-spacing:3px;font-size:12px}
+main{max-width:750px;margin:30px auto;padding:15px}
+.section{border-bottom:1px solid #615b4c;padding-bottom:12px;letter-spacing:3px}
+.case{background:#d9c9a5;color:#29251d;padding:22px;margin:22px 0;box-shadow:5px 6px 0 #514a3b;position:relative}
+.case:after{content:"CLASSIFIED";position:absolute;right:15px;top:15px;color:#a33;border:2px solid #a33;padding:4px;transform:rotate(7deg);font-size:10px;font-weight:bold}
+.case h2{font-size:23px;margin-top:12px}
+.case p{line-height:1.6}
+.tag{font-family:Arial;font-size:11px;letter-spacing:2px;color:#814}
+button{background:#29251d;color:#e8dfca;border:1px solid #29251d;padding:12px 18px;font-weight:bold;cursor:pointer}
+.details{display:none;border-top:1px dashed #777;padding-top:15px}
+footer{text-align:center;padding:35px;color:#938b79;font-size:12px;letter-spacing:2px}
+</style>
+</head>
+<body>
+<header>
+<div class="stamp">TOP SECRET</div>
+<h1>CASE FILES</h1>
+<p>CLASSIFIED INVESTIGATION ARCHIVE</p>
+<p>TRUTH IS HIDDEN IN THE DETAILS</p>
+</header>
+<main>
+<h3 class="section">◈ ACTIVE INVESTIGATIONS</h3>
+
+<div class="case">
+<div class="tag">FILE NO. 001 / MURDER</div>
+<h2>THE SILENT ROOM</h2>
+<p><b>Victim:</b> Adrian Miller</p>
+<p><b>Location:</b> Private study room</p>
+<p><b>Incident:</b> A mysterious death inside a locked room. Three people claim they know nothing.</p>
+<p><b>Suspects:</b> John, Mary and David.</p>
+<button onclick="toggle('one')">OPEN CASE FILE</button>
+<div class="details" id="one">
+<h3>INVESTIGATION EVIDENCE</h3>
+<ul>
+<li>A wet umbrella inside the room.</li>
+<li>A locked window.</li>
+<li>A clock stopped at 8:45 PM.</li>
+<li>Three different statements from three suspects.</li>
+</ul>
+<p><b>YOUR MISSION:</b> Examine the evidence. Who is lying? Who is the killer?</p>
+<p>Write down your theory before the solution is released.</p>
+</div>
+</div>
+
+<div class="case">
+<div class="tag">FILE NO. 002 / MYSTERY</div>
+<h2>MURDER AT MIDNIGHT</h2>
+<p><b>Victim:</b> A wealthy businessman.</p>
+<p><b>Location:</b> His private mansion.</p>
+<p><b>Incident:</b> Four guests were present. One of them never left the mansion.</p>
+<button onclick="toggle('two')">OPEN CASE FILE</button>
+<div class="details" id="two">
+<h3>INVESTIGATION STATUS</h3>
+<p>Evidence collection pending. Watch this space for the full crime scene.</p>
+</div>
+</div>
+
+<div class="case">
+<div class="tag">FILE NO. 003 / THEFT</div>
+<h2>THE MISSING NECKLACE</h2>
+<p><b>Incident:</b> A priceless necklace disappeared during a family celebration.</p>
+<p><b>Suspects:</b> Five guests. One secret.</p>
+<button onclick="toggle('three')">OPEN CASE FILE</button>
+<div class="details" id="three">
+<h3>INVESTIGATION STATUS</h3>
+<p>Evidence collection pending. Full case coming soon.</p>
+</div>
+</div>
+
+<h3 class="section">◈ SOLUTION ARCHIVE</h3>
+<p>Case explanations and culprit reveals will be published here after the investigation period.</p>
+</main>
+<footer>
+CASE FILES © 2026<br><br>
+CLASSIFIED • CONFIDENTIAL • INVESTIGATE CAREFULLY
+</footer>
+<script>
+function toggle(id){
+let x=document.getElementById(id);
+x.style.display=x.style.display==="block"?"none":"block";
+}
+</script>
+</body>
+</html>
