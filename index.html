@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CASE FILES | Mystery Archive</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#101010;color:#eee;font-family:Arial,sans-serif}
+header{text-align:center;padding:30px 15px;background:#191919;border-bottom:2px solid #9b2525}
+h1{letter-spacing:6px;color:#e33;margin:0}
+header p{color:#aaa}
+main{max-width:700px;margin:25px auto;padding:15px}
+.case{background:#1c1c1c;border:1px solid #444;padding:20px;margin-bottom:20px;border-radius:10px}
+.case h2{color:#e55}
+button{background:#9b2525;color:white;border:0;padding:12px 18px;border-radius:5px;font-weight:bold}
+.answer{display:none;background:#292929;padding:15px;margin-top:15px;border-left:3px solid #e33}
+.timer{color:#f5c46a;font-weight:bold}
+footer{text-align:center;color:#777;padding:25px}
+</style>
+</head>
+<body>
+<header>
+<h1>CASE FILES</h1>
+<p>Every clue matters. Every suspect lies.</p>
+</header>
+<main>
+<div class="case">
+<h2>CASE 001: THE SILENT ROOM</h2>
+<p><b>Victim:</b> Mr. Adrian</p>
+<p><b>Location:</b> Locked study room</p>
+<p><b>Incident:</b> Found dead at 9:00 PM.</p>
+<p><b>Suspects:</b></p>
+<ul>
+<li>John – His business partner</li>
+<li>Mary – His wife</li>
+<li>David – The housekeeper</li>
+</ul>
+<p><b>Clues:</b></p>
+<ul>
+<li>A wet umbrella was found inside the room.</li>
+<li>The window was locked from inside.</li>
+<li>John claims he left at 8:30 PM.</li>
+<li>Mary says she heard a clock stop at 8:45 PM.</li>
+<li>David says it did not rain that evening.</li>
+</ul>
+<p>Who is lying? Who is the killer?</p>
+<p class="timer" id="timer"></p>
+<button onclick="reveal()">Reveal Answer</button>
+<div class="answer" id="answer">
+<h3>CASE 001 – SOLUTION</h3>
+<p><b>Killer: John.</b></p>
+<p>The wet umbrella suggests someone entered from outside during rain. David claims there was no rain, while John's departure story needs further investigation. The clues are not sufficient to prove John's guilt conclusively. This case is deliberately open to investigation.</p>
+</div>
+</div>
+</main>
+<footer>CASE FILES © 2026 | THINK BEFORE YOU ACCUSE</footer>
+<script>
+const start=localStorage.getItem("case001start")||Date.now();
+localStorage.setItem("case001start",start);
+function reveal(){
+if(Date.now()-Number(start)<86400000){
+alert("The answer unlocks after 24 hours!");
+}else{
+document.getElementById("answer").style.display="block";
+}
+}
+function update(){
+let remaining=86400000-(Date.now()-Number(start));
+document.getElementById("timer").textContent=remaining>0?
+"Answer unlocks in "+Math.floor(remaining/3600000)+"h "+Math.floor(remaining%3600000/60000)+"m":
+"Answer unlocked!";
+}
+update();
+setInterval(update,1000);
+</script>
+</body>
+</html>
